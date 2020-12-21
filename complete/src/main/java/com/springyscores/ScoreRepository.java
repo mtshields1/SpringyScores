@@ -1,5 +1,6 @@
 package com.springyscores;
 
+import com.springyscores.models.ScoreModel;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

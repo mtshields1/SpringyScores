@@ -1,4 +1,4 @@
-package com.springyscores;
+package com.springyscores.models;
 
 import javax.persistence.*;
 
@@ -19,5 +19,6 @@ public class ScoreModel {
     private String time; // ISO format
     public int getScore() { return score;}
     public Long getId() { return id; }
+    public String getTime() { return time; }
     public void caseInsensitive() { this.player = this.player.toLowerCase(Locale.ROOT); }
 }
