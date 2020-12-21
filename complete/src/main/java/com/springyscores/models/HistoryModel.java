@@ -3,6 +3,7 @@ package com.springyscores.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class HistoryModel {
@@ -14,8 +15,8 @@ public class HistoryModel {
     double averageScore;
     @JsonProperty
     List<ScoreHistory> playerScores = new ArrayList<>();
-    public void setLowScore(int score, String time) { this.lowScore = new ScoreHistory(score, time); }
-    public void setTopScore(int score, String time) { this.topScore = new ScoreHistory(score, time); }
-    public void addScoreToHistoryList(int score, String time) { this.playerScores.add(new ScoreHistory(score, time)); }
+    public void setLowScore(int score, Date time) { this.lowScore = new ScoreHistory(score, time); }
+    public void setTopScore(int score, Date time) { this.topScore = new ScoreHistory(score, time); }
+    public void addScoreToHistoryList(int score, Date time) { this.playerScores.add(new ScoreHistory(score, time)); }
     public void setAverageScore(double averageScore) { this.averageScore = averageScore; }
 }

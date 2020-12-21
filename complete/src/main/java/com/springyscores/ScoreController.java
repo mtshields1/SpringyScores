@@ -7,7 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -40,17 +42,20 @@ public class ScoreController {
 	@GetMapping(path="/history/{player}")
 	@ResponseBody
 	public ResponseEntity getPlayerHistory(@PathVariable String player) {
-		/*Optional<List<ScoreModel>> history = scoreRepository.findByPlayerOrderByScore(player);
-		// TODO: create model to return. need to filter scores, highest, lowest, etc. make a service for this
-		if (history.isEmpty()) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User has no scores");
-		}
-		return new ResponseEntity<>(history.get(), HttpStatus.OK);*/
 		return scoreService.getPlayerHistory(player);
 	}
 
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
 		scoreService.deleteScore(id);
+	}
+
+	@GetMapping(path="/list")
+	@ResponseBody
+	public List<ScoreModel> getListOfScores(@RequestParam Map<String, String> filters) throws ParseException {
+		System.out.println(filters);
+		return scoreService.getListOfScores(filters);
+		//return scoreService.getPlayerHistory(player);
+		//return null;
 	}
 }
