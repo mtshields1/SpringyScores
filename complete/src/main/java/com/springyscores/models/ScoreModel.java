@@ -27,4 +27,6 @@ public class ScoreModel {
         this.time = time;
         this.score = score;
     }
+    public void setId (Long id) { this.id = id; }
+    public ScoreModel() {}
 }
