@@ -14,4 +14,5 @@ public class ScoreHistory {
     int score;
     @JsonProperty
     Date time;
+    public int getScore() { return score; }
 }

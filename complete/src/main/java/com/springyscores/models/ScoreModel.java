@@ -21,6 +21,7 @@ public class ScoreModel {
     public int getScore() { return score;}
     public Long getId() { return id; }
     public Date getTime() { return time; }
+    public String getPlayer() { return player; }
     public void caseInsensitive() { this.player = this.player.toLowerCase(Locale.ROOT); }
     public ScoreModel(String player, int score, Date time) {
         this.player = player;

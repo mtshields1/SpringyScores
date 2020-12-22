@@ -19,4 +19,8 @@ public class HistoryModel {
     public void setTopScore(int score, Date time) { this.topScore = new ScoreHistory(score, time); }
     public void addScoreToHistoryList(int score, Date time) { this.playerScores.add(new ScoreHistory(score, time)); }
     public void setAverageScore(double averageScore) { this.averageScore = averageScore; }
+    public ScoreHistory getLowScore() { return lowScore; }
+    public ScoreHistory getTopScore() { return topScore; }
+    public double getAverageScore() { return averageScore; }
+    public List<ScoreHistory> getPlayerScores() { return playerScores; }
 }
