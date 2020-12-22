@@ -53,9 +53,6 @@ public class ScoreController {
 	@GetMapping(path="/list")
 	@ResponseBody
 	public List<ScoreModel> getListOfScores(@RequestParam Map<String, String> filters) throws ParseException {
-		System.out.println(filters);
 		return scoreService.getListOfScores(filters);
-		//return scoreService.getPlayerHistory(player);
-		//return null;
 	}
 }

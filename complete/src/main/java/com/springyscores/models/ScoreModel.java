@@ -22,4 +22,9 @@ public class ScoreModel {
     public Long getId() { return id; }
     public Date getTime() { return time; }
     public void caseInsensitive() { this.player = this.player.toLowerCase(Locale.ROOT); }
+    public ScoreModel(String player, int score, Date time) {
+        this.player = player;
+        this.time = time;
+        this.score = score;
+    }
 }
