@@ -46,8 +46,14 @@ public class ScoreController {
 	}
 
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable Long id) {
-		scoreService.deleteScore(id);
+	public ResponseEntity<String> delete(@PathVariable Long id) {
+		try {
+			scoreService.deleteScore(id);
+			return ResponseEntity.status(HttpStatus.OK).body("Record deleted");
+		}
+		catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User score doesn't exist");
+		}
 	}
 
 	@GetMapping(path="/list")
